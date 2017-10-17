@@ -1,11 +1,196 @@
+$geneText: #666666;
+$geneTextGray: #999999;
+$geneTextPrimary: #00bc96;
+$geneTextWarning: #f3981d;
 $geneTitle: #2a3b42;
 $geneTitleNumber: #078b8a;
-$geneTitleNumberHover: #00bc96;
-$geneText: #666666;
-$geneTextNumber: #00bc96;
-$geneTextNumberHover: #4ccdb3;
-$geneMore: #666666;
-$geneMoreHover: #999999;
-$geneButtonBackground: #f3981d;
+$geneTitleNumberHover: $geneTextPrimary;
+$geneMore: $geneText;
+$geneMoreHover: $geneTextGray;
+$geneButtonBackground: $geneTextWarning;
 $geneButtonBackgroundHover: #ffac3d;
-$gene: #f3981d;
+$geneBorderColor: #e6e6e6;
+
+
+#geneContainer {
+  margin: 0;
+  padding: 0 0 10px 0;
+  width: 100%;
+  min-width: 1200px;
+  background: url("https://img.j1.com/images/images1308/ico/geneBackground.png") no-repeat center 40px #ffffff;
+}
+#geneBody {
+  margin: 0 auto;
+  width: 1200px;
+  color: $geneText;
+}
+
+#geneHeading {
+  display: flex;
+  margin: 40px 30px 40px 100px;
+  height: 40px;
+  h1 {
+    flex: 1;
+    font-size: 28px;
+    line-height: 40px;
+    color: $geneTitle;
+  }
+}
+
+.geneIcon {
+  display: inline-block;
+  background: url("https://img.j1.com/images/images1308/ico/geneIcon.png") no-repeat;
+  width: 30px;
+  height: 30px;
+  vertical-align: bottom;
+}
+.geneIcon-download {
+  width: 14px;
+  height: 14px;
+  background-position: -306px -40px;
+}
+.geneIcon-item1 {
+  background-position: 0 0;
+}
+.geneIcon-item2 {
+  background-position: 0 -40px;
+}
+.geneIcon-item3 {
+  background-position: 0 -80px;
+}
+.geneIcon-item4 {
+  background-position: 0 -120px;
+}
+.geneIcon-arrow {
+  width: 11px;
+  height: 30px;
+  background-position: -289px 6px;
+  @at-root a:hover & {
+    background-position: -309px 6px;
+  }
+}
+.geneIcon-declaration {
+  width: 40px;
+  height: 40px;
+  background-position: 0 -280px;
+}
+
+.text-number {
+  font-style: normal;
+  color: $geneTitleNumber;
+  @at-root a:hover & {
+    color: $geneTitleNumberHover;
+  }
+}
+.text-primary {
+  color: $geneTextPrimary;
+}
+a.text-primary:hover {
+  color: $geneTextPrimary;
+  font-weight: bold;
+}
+.text-warning {
+  color: $geneTextWarning;
+}
+
+.geneButton {
+  display: inline-block;
+  padding: 13px 14px;
+  background: $geneButtonBackground;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1;
+  color: #ffffff;
+  &:hover {
+    color: #ffffff;
+    background: $geneButtonBackgroundHover;
+  }
+}
+
+.geneSection {
+  margin: 20px;
+  padding: 0 20px;
+  border: 1px solid $geneBorderColor;
+  border-radius: 5px;
+  background: #ffffff;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 10px 0;
+    line-height: 55px;
+    li {
+      display: flex;
+      padding: 0 40px 0 58px;
+      h4 {
+        flex: 1;
+        font-size: 15px;
+      }
+      span {
+        font-size: 18px;
+        i {
+          color: $geneTextPrimary;
+        }
+      }
+      & + li {
+        border-top: 1px solid $geneBorderColor;
+      }
+    }
+  }
+}
+.geneSectionTitle {
+  display: flex;
+  padding: 33px 40px 27px 20px;
+  border-bottom: 1px solid $geneBorderColor;
+  height: 30px;
+  line-height: 30px;
+  strong {
+    flex: 1;
+    font-size: 21px;
+    font-weight: bold;
+    color: $geneTitle;
+  }
+  span {
+    font-size: 18px;
+    color: $geneMore;
+  }
+  &:hover {
+    span {
+      color: $geneMoreHover;
+    }
+  }
+}
+
+.geneDeclaration {
+  margin: 20px;
+  padding: 45px 275px;
+  border: 1px solid $geneBorderColor;
+  border-radius: 5px;
+  background: url("https://img.j1.com/images/images1308/ico/geneDeclarationBackground.png") no-repeat right bottom #ffffff;
+  font-size: 14px;
+  h2 {
+    margin-bottom: 10px;
+    font-size: 21px;
+    text-align: center;
+    color: $geneTitle;
+  }
+  h3 {
+    margin-bottom: 4px;
+    font-size: 15px;
+    line-height: 40px;
+    .geneIcon-declaration {
+      margin-right: 18px;
+    }
+  }
+  ul {
+    list-style: disc;
+    padding-left: 58px;
+    color: $geneTextGray;
+    li {
+      list-style-type: disc;
+    }
+  }
+  p {
+    margin-top: 10px;
+    padding: 0 0 0 58px;
+  }
+}

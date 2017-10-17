@@ -98,7 +98,6 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     '<%= config.dist %>/css/gene-min.css': [
-                        'bower_components/font-awesome/css/font-awesome.css',
                         '<%= config.dist %>/css/gene.css'
                     ]
                 }
@@ -116,15 +115,6 @@ module.exports = function(grunt) {
                             '**/*.{html,js,css}',
                             '**/*.{ico,png,txt,jpg,jpeg,gif}',
                             '.htaccess'
-                        ]
-                    },
-                    {
-                        expand: true,
-                        dot: true,
-                        cwd: 'bower_components/font-awesome/fonts',
-                        dest: '<%= config.dist %>/css/fonts',
-                        src: [
-                            '*'
                         ]
                     }
                 ]
@@ -164,8 +154,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 options: {
-                    base: '<%= config.web %>',
-                    livereload: false
+                    base: '<%= config.web %>'
                 }
             }
         }
