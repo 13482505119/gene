@@ -112,9 +112,7 @@ module.exports = function(grunt) {
                         cwd: '<%= config.web %>',
                         dest: '<%= config.dist %>',
                         src: [
-                            '**/*.{html,js,css}',
-                            '**/*.{ico,png,txt,jpg,jpeg,gif}',
-                            '.htaccess'
+                            '**/*.{html,js,css}'
                         ]
                     }
                 ]
@@ -189,10 +187,7 @@ module.exports = function(grunt) {
         'copy:dist',
         'autoprefixer:dist',
         'cssmin',
-        'uglify',
-        'useminPrepare',
-        'usemin',
-        'includereplace'
+        'uglify'
     ]);
 
     // Default task(s).
