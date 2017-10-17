@@ -1,0 +1,8 @@
+node_modules
+dist
+bower_components
+.idea
+.DS_Store
+**/*.css.map
+**/scss/*.css
+.sass-cache
