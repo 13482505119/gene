@@ -260,7 +260,7 @@
 </div>
 
 <!-- 基因检测 begin -->
-<div id="geneContainer" class="gcBg-1-1">
+<div id="geneContainer" class="gcBg-3">
     <div id="geneBody">
         <div class="detailnav">
 			<span>
@@ -274,121 +274,109 @@
         </div>
 
         <div id="geneHeading">
-            <h1>力量表现</h1>
+            <h1><strong>李大爷</strong>的遗传疾病报告</h1>
         </div>
 
-        <div class="geneItem">
-            <h2 class="text-title">在力量运动中的表现于平均预期一致</h2>
-            <ul class="geneItemTable">
+        <!-- 超过5想增加 geneFold 样式-->
+        <div class="geneSection geneSection-sub geneFold">
+            <div class="text-title">
+                <strong><i class="geneIcon geneIcon-3-1"></i> 遗传疾病携带 <i class="text-number">47</i> 项</strong>
+            </div>
+            <ul>
                 <li>
-                    <h4>基因</h4>
-                    <p>IRF4</p>
+                    <h4><a href="gene-report-3-1.html">遗传疾病1</a></h4>
+                    <span><a href="gene-report-3-1.html" class="text-primary">携带</a></span>
+                    <i class="genePositive"></i>
                 </li>
                 <li>
-                    <h4>关注位点</h4>
-                    <p>rs12203592</p>
+                    <h4><a href="gene-report-3-1.html">遗传疾病2</a></h4>
+                    <span><a href="gene-report-3-1.html" class="text-primary">携带</a></span>
+                    <i class="genePositive"></i>
                 </li>
                 <li>
-                    <h4>参考基因型</h4>
-                    <p><i class="geneBadge">C/C</i></p>
+                    <h4><a href="gene-report-3-1.html">遗传疾病3</a></h4>
+                    <span><a href="gene-report-3-1.html" class="text-primary">携带</a></span>
+                    <i class="genePositive"></i>
                 </li>
                 <li>
-                    <h4>参考基因型</h4>
-                    <p><i class="geneBadge">C/C</i></p>
+                    <h4><a href="gene-report-3-1.html">遗传疾病4</a></h4>
+                    <span><a href="gene-report-3-1.html" class="text-primary">携带</a></span>
+                    <i class="genePositive"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-1.html">遗传疾病5</a></h4>
+                    <span><a href="gene-report-3-1.html" class="text-primary">携带</a></span>
+                    <i class="genePositive"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-1.html">遗传疾病6</a></h4>
+                    <span><a href="gene-report-3-1.html" class="text-primary">携带</a></span>
+                    <i class="genePositive"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-1.html">遗传疾病7</a></h4>
+                    <span><a href="gene-report-3-1.html" class="text-primary">携带</a></span>
+                    <i class="genePositive"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-1.html">遗传疾病8</a></h4>
+                    <span><a href="gene-report-3-1.html" class="text-primary">携带</a></span>
+                    <i class="genePositive"></i>
                 </li>
             </ul>
-            <p>您在运动中的表现一般</p>
+            <!-- 超过5项增加 arrow 按钮 -->
+            <div class="arrow"></div>
         </div>
 
-        <div class="geneItem">
-            <h3 class="text-title">人群分布</h3>
-            <div class="geneItemChart">
-                <div class="geneItemContent">
-                    <ul>
-                        <li><i></i><strong>在力量运动中的表现与平均预期一致：71.14%</strong></li>
-                        <li><i></i>在力量运动中的表现高于平均预期：28.86%</li>
-                    </ul>
-                    <div id="geneChart"></div>
-                </div>
+        <!-- 超过5想增加 geneFold 样式-->
+        <div class="geneSection geneSection-sub geneFold">
+            <div class="text-title">
+                <strong><i class="geneIcon geneIcon-3-1"></i> 遗传疾病未携带 <i class="text-number">47</i> 项</strong>
             </div>
-        </div>
-        <script type="text/javascript" src="js/echarts.min.js"></script>
-        <script type="text/javascript">
-            (function () {
-                //数据
-                var title = '人群分布';
-                var color = ['#5ec5c9', '#ffd276', '#fbab6c'];
-                var data = [
-                    {value: 71.14, name:'在力量运动中的表现与平均预期一致'},
-                    {value: 28.86, name:'在力量运动中的表现高于平均预期'}
-                ];
-
-                var chartGene = echarts.init(document.getElementById('geneChart'));
-                var optionGene = {
-                    title: {
-                        show: false
-                    },
-                    tooltip: {
-                        show: false
-                    },
-                    legend: {
-                        show: false
-                    },
-                    toolbox: {
-                        show : true,
-                        feature : {
-                            mark : {show: true},
-                            dataView : {show: true, readOnly: false},
-                            magicType : {
-                                show: true,
-                                type: ['pie', 'funnel'],
-                                option: {
-                                    funnel: {
-                                        x: '25%',
-                                        width: '50%',
-                                        funnelAlign: 'center',
-                                        max: 1548
-                                    }
-                                }
-                            },
-                            restore : {show: true},
-                            saveAsImage : {show: true}
-                        }
-                    },
-                    color: color,
-                    calculable: true,
-                    series: [
-                        {
-                            name: title,
-                            type: 'pie',
-                            radius : ['55%', '90%'],
-                            center: ['50%', '50%'],
-                            itemStyle: {
-                                normal: {
-                                    label: {
-                                        show: false
-                                    },
-                                    labelLine: {
-                                        show: false
-                                    }
-                                }
-                            },
-                            data: data
-                        }
-                    ]
-                };
-
-                chartGene.setOption(optionGene);
-            })();
-        </script>
-
-        <div class="geneItem">
-            <h3 class="text-title">生活建议</h3>
-            <div class="geneItemText">
-                <div class="geneItemContent">
-                    与运动一样，饮食在管理体重、控制体型上起着重要作用。每个人对某种特定食物的喜好和反应是不同的，这与人体的某些基因相关。这些基因有的能够影响人对某种食物成分（如碳水化合物）的摄入倾向，如有的能够调节人体对食物成分（如饱和脂肪）的的代谢情况。因此，了解自己对食物的特殊喜好和代谢情况，能够帮助自己更合理地调整饮食搭配以达到自己或健身或减肥或保持健康的目标。
-                </div>
-            </div>
+            <ul>
+                <li>
+                    <h4><a href="gene-report-3-2.html">遗传疾病1</a></h4>
+                    <span><a href="gene-report-3-2.html" class="text-primary">未携带</a></span>
+                    <i class="geneNegative"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-2.html">遗传疾病2</a></h4>
+                    <span><a href="gene-report-3-2.html" class="text-primary">未携带</a></span>
+                    <i class="geneNegative"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-2.html">遗传疾病3</a></h4>
+                    <span><a href="gene-report-3-2.html" class="text-primary">未携带</a></span>
+                    <i class="geneNegative"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-2.html">遗传疾病4</a></h4>
+                    <span><a href="gene-report-3-2.html" class="text-primary">未携带</a></span>
+                    <i class="geneNegative"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-2.html">遗传疾病5</a></h4>
+                    <span><a href="gene-report-3-2.html" class="text-primary">未携带</a></span>
+                    <i class="geneNegative"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-2.html">遗传疾病6</a></h4>
+                    <span><a href="gene-report-3-2.html" class="text-primary">未携带</a></span>
+                    <i class="geneNegative"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-2.html">遗传疾病7</a></h4>
+                    <span><a href="gene-report-3-2.html" class="text-primary">未携带</a></span>
+                    <i class="geneNegative"></i>
+                </li>
+                <li>
+                    <h4><a href="gene-report-3-2.html">遗传疾病8</a></h4>
+                    <span><a href="gene-report-3-2.html" class="text-primary">未携带</a></span>
+                    <i class="geneNegative"></i>
+                </li>
+            </ul>
+            <!-- 超过5项增加 arrow 按钮 -->
+            <div class="arrow"></div>
         </div>
 
         <div class="geneDeclaration">

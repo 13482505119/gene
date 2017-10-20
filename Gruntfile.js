@@ -150,7 +150,7 @@ module.exports = function(grunt) {
                 livereload: 35729,
                 hostname: '*'
             },
-            dist: {
+            livereload: {
                 options: {
                     base: '<%= config.web %>'
                 }
@@ -175,7 +175,7 @@ module.exports = function(grunt) {
     grunt.registerTask('server', [
         'sass:dist',
         'autoprefixer:dist',
-        'connect:dist',
+        'connect:livereload',
         'watch'
     ]);
 
