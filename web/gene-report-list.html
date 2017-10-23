@@ -259,149 +259,97 @@
     </div>
 </div>
 
-<!-- 基因检测 begin -->
-<div id="geneContainer" class="gcBg-1-1">
+<!-- 基金检测 begin -->
+<div id="geneContainer" class="gcBg-list">
     <div id="geneBody">
         <div class="detailnav">
 			<span>
                 <a target="_blank" href="https://www.j1.com/">健一网首页</a> &gt;
                 <a target="_blank" href="#">我的健一网</a> &gt;
                 <a target="_blank" href="#">检测人列表页</a> &gt;
-                <a target="_blank" href="#">我的基因检测报告</a> &gt;
-                <strong>基因特质</strong>
+                <strong>帮助中心</strong>
 			</span>
             <input type="hidden" value="DF" id="storeDpt"/>
         </div>
 
         <div id="geneHeading">
-            <h1>力量表现</h1>
+            <h1>基因检测人列表</h1>
         </div>
 
-        <div class="geneItem">
-            <h2 class="text-title">在力量运动中的表现于平均预期一致</h2>
-            <ul class="geneItemTable">
-                <li>
-                    <h4>基因</h4>
-                    <p>IRF4</p>
-                </li>
-                <li>
-                    <h4>关注位点</h4>
-                    <p>rs12203592</p>
-                </li>
-                <li>
-                    <h4>参考基因型</h4>
-                    <p><i class="geneBadge">C/C</i></p>
-                </li>
-                <li>
-                    <h4>参考基因型</h4>
-                    <p><i class="geneBadge">C/C</i></p>
-                </li>
-            </ul>
-            <p>您在运动中的表现一般</p>
-        </div>
-
-        <div class="geneItem">
-            <h3 class="text-title">人群分布</h3>
-            <div class="geneItemChart">
-                <div class="geneItemContent">
-                    <ul>
-                        <li><i></i><strong>在力量运动中的表现与平均预期一致：71.14%<i class="geneIcon geneIcon-checked"></i></strong></li>
-                        <li><i></i>在力量运动中的表现高于平均预期：28.86%</li>
-                    </ul>
-                    <div id="geneChart"></div>
-                </div>
+        <!-- 未购买 begin -->
+        <div class="geneMessage">
+            <h2>您的账号还没有购买相关基因产品</h2>
+            <p>您可以选择购买IGENE检测套件，或查看相关示例报告</p>
+            <div>
+                <a class="geneButton geneButton-primary" href="gene-report.html"><i class="geneIcon geneIcon-cart"></i>购买iGENE检测套件</a>
+                <a class="geneButton geneButton-warning" href="gene-report.html"><i class="geneIcon geneIcon-text"></i>查看示例报告</a>
             </div>
         </div>
-        <script type="text/javascript" src="js/echarts.min.js"></script>
-        <script type="text/javascript">
-            (function () {
-                //数据
-                var title = '人群分布';
-                var color = ['#5ec5c9', '#ffd276', '#fbab6c'];
-                var data = [
-                    {value: 71.14, name:'在力量运动中的表现与平均预期一致'},
-                    {value: 28.86, name:'在力量运动中的表现高于平均预期'}
-                ];
+        <!-- 未购买 end -->
 
-                var chartGene = echarts.init(document.getElementById('geneChart'));
-                var optionGene = {
-                    title: {
-                        show: false
-                    },
-                    tooltip: {
-                        show: false
-                    },
-                    legend: {
-                        show: false
-                    },
-                    toolbox: {
-                        show : true,
-                        feature : {
-                            mark : {show: true},
-                            dataView : {show: true, readOnly: false},
-                            magicType : {
-                                show: true,
-                                type: ['pie', 'funnel'],
-                                option: {
-                                    funnel: {
-                                        x: '25%',
-                                        width: '50%',
-                                        funnelAlign: 'center',
-                                        max: 1548
-                                    }
-                                }
-                            },
-                            restore : {show: true},
-                            saveAsImage : {show: true}
-                        }
-                    },
-                    color: color,
-                    calculable: true,
-                    series: [
-                        {
-                            name: title,
-                            type: 'pie',
-                            radius : ['55%', '90%'],
-                            center: ['50%', '50%'],
-                            itemStyle: {
-                                normal: {
-                                    label: {
-                                        show: false
-                                    },
-                                    labelLine: {
-                                        show: false
-                                    }
-                                }
-                            },
-                            data: data
-                        }
-                    ]
-                };
-
-                chartGene.setOption(optionGene);
-            })();
-        </script>
-
-        <div class="geneItem">
-            <h3 class="text-title">生活建议</h3>
-            <div class="geneItemText">
-                <div class="geneItemContent">
-                    与运动一样，饮食在管理体重、控制体型上起着重要作用。每个人对某种特定食物的喜好和反应是不同的，这与人体的某些基因相关。这些基因有的能够影响人对某种食物成分（如碳水化合物）的摄入倾向，如有的能够调节人体对食物成分（如饱和脂肪）的的代谢情况。因此，了解自己对食物的特殊喜好和代谢情况，能够帮助自己更合理地调整饮食搭配以达到自己或健身或减肥或保持健康的目标。
-                </div>
-            </div>
-        </div>
-
-        <div class="geneDeclaration">
-            <h2><i class="geneIcon geneIcon-declaration"></i>检测申明</h2>
-            <ul>
-                <li>检测结果仅供参考，不能作为临床诊断结果直接使用。</li>
-                <li>该检测无法覆盖所有与该项目相关的位点。</li>
-                <li>基因对健康有重要影响，但个体生理特征同时也受到内外诸多因素影响。</li>
-                <li>请检测者以预防的心态正确对待检测结果。</li>
-                <li>我们承诺严格保护您的个人信息和隐私安全。</li>
-            </ul>
-            <p><a class="text-primary" href="#" target="_blank">了解更多</a></p>
-        </div>
+        <!-- 已购买 begin -->
+        <table class="geneTable">
+            <thead>
+            <tr>
+                <td>下单时间</td>
+                <td>套餐名称</td>
+                <td>样本寄回状态</td>
+                <td>检测者姓名</td>
+                <td>初检状态</td>
+                <td>复检状态</td>
+                <td>复检物流</td>
+                <td>检测状态</td>
+                <td>报告状态</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2017.09.01</td>
+                <td>999套餐</td>
+                <td>暂无</td>
+                <td>暂无</td>
+                <td>暂无</td>
+                <td>无</td>
+                <td>无</td>
+                <td></td>
+                <td>暂未生成</td>
+            </tr>
+            <tr>
+                <td>2017.08.11</td>
+                <td>999套餐</td>
+                <td>已收到用户样本</td>
+                <td>李大爷</td>
+                <td>合格</td>
+                <td>无</td>
+                <td>无</td>
+                <td></td>
+                <td>暂未生成</td>
+            </tr>
+            <tr>
+                <td>2017.08.11</td>
+                <td>999套餐</td>
+                <td>已收到用户样本</td>
+                <td>汪大爷</td>
+                <td>不合格</td>
+                <td>第一次复检</td>
+                <td>物流单号</td>
+                <td></td>
+                <td>暂未生成</td>
+            </tr>
+            <tr>
+                <td>2017.08.11</td>
+                <td>999套餐</td>
+                <td>已收到用户样本</td>
+                <td>喵大爷</td>
+                <td>复检合格</td>
+                <td>第二次复检</td>
+                <td>物流单号</td>
+                <td></td>
+                <td><a href="gene-report.html" class="text-primary">查看报告</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <!-- 已购买 end -->
     </div>
 </div>
 <!-- 基因检测 end -->

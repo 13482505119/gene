@@ -7,6 +7,9 @@ $(function () {
     $('#geneContainer').find('.arrow').click(function () {
         $(this).parent().toggleClass("open");
     });
+    $('.geneAccordion').find('h2').click(function () {
+        $(this).parent().toggleClass("active").siblings('.active').removeClass('active');
+    });
 
     //标签切换效果
     $('.geneTabs').each(function () {

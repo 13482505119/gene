@@ -21,10 +21,10 @@ $positive: #ff6b6b;
   -moz-border-radius: $size;
   border-radius: $size;
 }
-@mixin rotate-transition($ms: 300ms) {
-  -webkit-transition: all $ms;
-  -moz-transition: all $ms;
-  transition: all $ms;
+@mixin rotate-transition($attr: all, $ms: 300ms) {
+  -webkit-transition: $attr $ms;
+  -moz-transition: $attr $ms;
+  transition: $attr $ms;
 }
 @mixin rotate-transform($deg: 180deg) {
   -webkit-transform: rotateZ($deg);
@@ -61,6 +61,15 @@ $positive: #ff6b6b;
   &.gcBg-3 {
     background-image: url("https://img.j1.com/images/images1308/ico/geneBackground3.png");
   }
+  &.gcBg-4 {
+    background-image: url("https://img.j1.com/images/images1308/ico/geneBackground4.png");
+  }
+  &.gcBg-help {
+    background-image: url("https://img.j1.com/images/images1308/ico/geneBackgroundHelp.png");
+  }
+  &.gcBg-list {
+    background-image: url("https://img.j1.com/images/images1308/ico/geneBackgroundList.png");
+  }
 }
 #geneBody {
   margin: 0 auto;
@@ -78,6 +87,38 @@ $positive: #ff6b6b;
     line-height: 40px;
     color: $geneTitle;
   }
+}
+
+#geneContainer a {
+  color: $geneText;
+  &:hover {
+    color: #c40000;
+  }
+}
+#geneContainer .text-number {
+  font-style: normal;
+  color: $geneTitleNumber;
+  @at-root a:hover & {
+    color: $geneTitleNumberHover;
+  }
+}
+#geneContainer .text-primary {
+  color: $geneTextPrimary;
+}
+#geneContainer a.text-primary:hover {
+  color: $geneLinkHover;
+}
+#geneContainer .text-warning {
+  color: $geneTextWarning;
+}
+#geneContainer .text-title {
+  color: $geneTitle;
+}
+#geneContainer .text-negative {
+  color: $negative;
+}
+#geneContainer .text-positive {
+  color: $positive;
 }
 
 .geneIcon {
@@ -126,6 +167,22 @@ $positive: #ff6b6b;
   height: 40px;
   background-position: 0 -280px;
 }
+.geneIcon-checked {
+  width: 27px;
+  height: 26px;
+  background-position: -293px -120px;
+}
+.geneIcon-cart {
+  width: 30px;
+  height: 25px;
+  background-position: -40px -280px;
+}
+.geneIcon-text {
+  width: 30px;
+  height: 25px;
+  background-position: -80px -280px;
+}
+
 .geneBadge {
   display: inline-block;
   width: 38px;
@@ -170,51 +227,41 @@ $positive: #ff6b6b;
   background: -webkit-linear-gradient(#ff6b6b, #ff9191);
 }
 
-#geneContainer a {
-  color: $geneText;
-  &:hover {
-    color: #c40000;
-  }
-}
-#geneContainer .text-number {
-  font-style: normal;
-  color: $geneTitleNumber;
-  @at-root a:hover & {
-    color: $geneTitleNumberHover;
-  }
-}
-#geneContainer .text-primary {
-  color: $geneTextPrimary;
-}
-#geneContainer a.text-primary:hover {
-  color: $geneLinkHover;
-}
-#geneContainer .text-warning {
-  color: $geneTextWarning;
-}
-#geneContainer .text-title {
-  color: $geneTitle;
-}
-#geneContainer .text-negative {
-  color: $negative;
-}
-#geneContainer .text-positive {
-  color: $positive;
-}
-
-#geneContainer .geneButton {
+.geneButton {
   display: inline-block;
   padding: 13px 14px;
   background: $geneButtonBackground;
   @include border-radius;
   font-size: 14px;
   line-height: 1;
-  color: #ffffff;
+  color: #ffffff !important;
   &:hover {
-    color: #ffffff;
     background: $geneButtonBackgroundHover;
   }
 }
+.geneButton-warning,
+.geneButton-primary {
+  margin: 0 16px;
+  padding: 16px 22px 14px 22px;
+  font-size: 15px;
+  line-height: 25px;
+  > .geneIcon {
+    margin-right: 15px;
+  }
+}
+.geneButton-warning {
+  background: #f3981c;
+  &:hover {
+    background: lighten(#f3981c, 10%);
+  }
+}
+.geneButton-primary {
+  background: #39bc80;
+  &:hover {
+    background: lighten(#39bc80, 10%);
+  }
+}
+
 .geneFold {
   position: relative;
   .arrow {
@@ -234,7 +281,7 @@ $positive: #ff6b6b;
   }
 }
 
-.geneSection, .geneDeclaration, .geneItem, .geneTabs {
+.geneSection, .geneDeclaration, .geneItem, .geneTabs, .geneHelp, .geneTable, .geneMessage {
   margin: 20px;
   padding: 0 20px;
   border: 1px solid $geneBorderColor;
@@ -242,7 +289,7 @@ $positive: #ff6b6b;
   background: #ffffff;
 }
 .geneSection {
-  & > .text-title {
+  > .text-title {
     display: flex;
     padding: 33px 40px 27px 20px;
     border-bottom: 1px solid $geneBorderColor;
@@ -264,7 +311,7 @@ $positive: #ff6b6b;
       }
     }
   }
-  & > ul {
+  > ul {
     list-style: none;
     margin: 0;
     padding: 0 0 10px 0;
@@ -289,20 +336,19 @@ $positive: #ff6b6b;
     }
   }
 }
-
 .geneSection-sub {
-  & > .text-title {
+  > .text-title {
     span {
       width: 9em;
       text-align: center;
     }
   }
-  & > ul {
+  > ul {
     max-height: 275px;
     overflow: hidden;
     @include rotate-transition;
-    & > li {
-      & > .text-primary {
+    > li {
+      > .text-primary {
         width: 9em;
         text-align: center;
         font-size: 18px;
@@ -355,36 +401,36 @@ $positive: #ff6b6b;
 
 .geneItem {
   font-size: 14px;
-  & > .text-title {
+  .text-title {
     padding: 30px 0 17px 0;
     font-size: 21px;
     line-height: 30px;
     text-align: center;
     font-weight: bold;
   }
-  & > h2.text-title {
+  h2.text-title {
     padding-bottom: 32px;
     border-bottom: 1px solid $geneBorderColor;
   }
-  & > p {
+  > p {
     padding: 30px 0;
     text-align: center;
     font-size: 21px;
     color: $geneTitle;
   }
-  & > .geneItemList {
+  > .geneItemList {
     list-style: none;
     margin: 0;
     padding: 0;
     max-height: 0;
     overflow: hidden;
     @include rotate-transition;
-    & > li {
+    > li {
       border-top: 1px solid $geneBorderColor;
     }
   }
   &.open {
-    & > .geneItemList {
+    > .geneItemList {
       max-height: 3030px;
     }
   }
@@ -397,11 +443,11 @@ $positive: #ff6b6b;
   margin: 0 auto;
   padding: 0;
   width: 780px;
-  & > li {
+  > li {
     flex: 1;
     font-size: 15px;
-    & > h4,
-    & > p {
+    > h4,
+    > p {
       height: 55px;
       display: flex;
       align-items: center;
@@ -422,16 +468,16 @@ $positive: #ff6b6b;
 }
 .geneItemChart {
   @extend .geneItemText;
-  & > .geneItemContent {
+  > .geneItemContent {
     width: 840px;
     position: relative;
-    & > ul {
+    > ul {
       padding: 36px 0 36px 72px;
-      & > li {
+      > li {
         padding: 10px 0;
         font-size: 18px;
         line-height: 1;
-        & > i {
+        > i {
           display: inline-block;
           margin-right: 15px;
           width: 17px;
@@ -439,13 +485,13 @@ $positive: #ff6b6b;
           vertical-align: bottom;
         }
       }
-      & > li:nth-child(1) > i {
+      > li:nth-child(1) > i {
         background-color: #5ec5c9;
       }
-      & > li:nth-child(2) > i {
+      > li:nth-child(2) > i {
         background-color: #ffd276;
       }
-      & > li:nth-child(3) > i {
+      > li:nth-child(3) > i {
         background-color: #fbab6c;
       }
     }
@@ -461,18 +507,18 @@ $positive: #ff6b6b;
 }
 .geneItemRuler {
   @extend .geneItemText;
-  & > .text-title {
+  > .text-title {
     padding: 38px 0 28px 0;
     font-size: 21px;
   }
-  & > .ruler {
+  > .ruler {
     position: relative;
     margin: 30px 0;
     width: 560px;
     height: 32px;
     background: -webkit-linear-gradient(left, #6fc8fa, #ffe35f 50%, #faaa6a);
     @include border-radius(16px);
-    & > ul {
+    > ul {
       position: absolute;
       left: 0;
       right: 0;
@@ -486,19 +532,19 @@ $positive: #ff6b6b;
       font-weight: bold;
     }
   }
-  & > .scale {
+  > .scale {
     margin: 0 0 30px 0;
     padding-right: 60px;
     width: 540px;
     border-top: 1px solid $geneBorderColor;
-    & > span {
+    > span {
       position: relative;
       display: inline-block;
       font-size: 44px;
       line-height: 60px;
       color: #c6dc9c;
       font-family: impact, serif;
-      & > i {
+      > i {
         position: absolute;
         left: 50%;
         top: -12px;
@@ -511,7 +557,7 @@ $positive: #ff6b6b;
       }
     }
   }
-  & > ul {
+  > ul {
     width: 340px;
     font-size: 18px;
     line-height: 36px;
@@ -521,7 +567,7 @@ $positive: #ff6b6b;
 }
 
 .geneTabs {
-  & > .tab-list {
+  > .tab-list {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -529,7 +575,7 @@ $positive: #ff6b6b;
     border-bottom: 1px solid $geneBorderColor;
     font-size: 15px;
     line-height: 23px;
-    & > li {
+    > li {
       margin: 8px 20px 7px 20px;
       padding: 1px 15px;
       @include border-radius(12px);
@@ -541,27 +587,27 @@ $positive: #ff6b6b;
         border: 1px solid $geneBadge;
       }
     }
-    & > li.active {
+    > li.active {
       background: $geneBadge;
       color: #ffffff;
     }
   }
-  & > .tab-content {
-    & > .tab-pane {
+  > .tab-content {
+    > .tab-pane {
       position: relative;
       display: none;
-      & > ul {
+      > ul {
         list-style: none;
         /*max-height: 840px;*/
         overflow: hidden;
         @include rotate-transition;
-        & > li {
+        > li {
           display: flex;
           align-items: center;
           padding: 0 20px 0 58px;
           height: 56px;
           font-size: 18px;
-          & > h5 {
+          > h5 {
             flex: 1;
             font-size: 15px;
           }
@@ -571,8 +617,81 @@ $positive: #ff6b6b;
         max-height: 2520px;
       }*/
     }
-    & > .active {
+    > .active {
       display: block;
     }
   }
 }
+
+.geneHelp {
+  padding: 46px 40px 46px 68px;
+  font-size: 15px;
+  line-height: 30px;
+  color: $geneBadge;
+  > .geneAccordion {
+    list-style: decimal;
+    padding-left: 20px;
+    > li {
+      list-style: decimal;
+      padding: 9px 0;
+      > h2 {
+        cursor: pointer;
+      }
+      > p {
+        max-height: 0;
+        color: $geneText;
+        @include rotate-transition(max-height);
+        overflow: hidden;
+      }
+    }
+    > li.active {
+      > h2 {
+        font-weight: bold;
+      }
+      > p {
+        max-height: 3000px;
+      }
+    }
+  }
+}
+
+.geneTable {
+  padding: 0;
+  width: 1158px;
+  td {
+    text-align: center;
+    font-size: 15px;
+    line-height: 55px;
+  }
+  td:first-child {
+    padding-left: 30px;
+  }
+  td:last-child {
+    padding-right: 30px;
+  }
+  thead td {
+    border-bottom: 1px solid $geneBorderColor;
+    font-weight: bold;
+  }
+}
+
+.geneMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  h2 {
+    margin: 35px 0;
+    font-size: 21px;
+    color: $geneTitle;
+  }
+  p {
+    margin: 15px 0;
+    font-size: 14px;
+  }
+  div {
+    display: flex;
+    align-content: center;
+  }
+}
+

@@ -17,6 +17,15 @@
 #geneContainer.gcBg-3 {
   background-image: url("https://img.j1.com/images/images1308/ico/geneBackground3.png");
 }
+#geneContainer.gcBg-4 {
+  background-image: url("https://img.j1.com/images/images1308/ico/geneBackground4.png");
+}
+#geneContainer.gcBg-help {
+  background-image: url("https://img.j1.com/images/images1308/ico/geneBackgroundHelp.png");
+}
+#geneContainer.gcBg-list {
+  background-image: url("https://img.j1.com/images/images1308/ico/geneBackgroundList.png");
+}
 
 #geneBody {
   margin: 0 auto;
@@ -34,6 +43,45 @@
   font-size: 28px;
   line-height: 40px;
   color: #2a3b42;
+}
+
+#geneContainer a {
+  color: #666666;
+}
+#geneContainer a:hover {
+  color: #c40000;
+}
+
+#geneContainer .text-number {
+  font-style: normal;
+  color: #078b8a;
+}
+a:hover #geneContainer .text-number {
+  color: #00bc96;
+}
+
+#geneContainer .text-primary {
+  color: #00bc96;
+}
+
+#geneContainer a.text-primary:hover {
+  color: #4ccdb3;
+}
+
+#geneContainer .text-warning {
+  color: #f3981d;
+}
+
+#geneContainer .text-title {
+  color: #2a3b42;
+}
+
+#geneContainer .text-negative {
+  color: #96df7c;
+}
+
+#geneContainer .text-positive {
+  color: #ff6b6b;
 }
 
 .geneIcon {
@@ -93,6 +141,24 @@ a:hover .geneIcon-arrow {
   background-position: 0 -280px;
 }
 
+.geneIcon-checked {
+  width: 27px;
+  height: 26px;
+  background-position: -293px -120px;
+}
+
+.geneIcon-cart {
+  width: 30px;
+  height: 25px;
+  background-position: -40px -280px;
+}
+
+.geneIcon-text {
+  width: 30px;
+  height: 25px;
+  background-position: -80px -280px;
+}
+
 .geneBadge {
   display: inline-block;
   width: 38px;
@@ -143,57 +209,43 @@ a:hover .geneIcon-arrow {
   background: -webkit-linear-gradient(#ff6b6b, #ff9191);
 }
 
-#geneContainer a {
-  color: #666666;
-}
-#geneContainer a:hover {
-  color: #c40000;
-}
-
-#geneContainer .text-number {
-  font-style: normal;
-  color: #078b8a;
-}
-a:hover #geneContainer .text-number {
-  color: #00bc96;
-}
-
-#geneContainer .text-primary {
-  color: #00bc96;
-}
-
-#geneContainer a.text-primary:hover {
-  color: #4ccdb3;
-}
-
-#geneContainer .text-warning {
-  color: #f3981d;
-}
-
-#geneContainer .text-title {
-  color: #2a3b42;
-}
-
-#geneContainer .text-negative {
-  color: #96df7c;
-}
-
-#geneContainer .text-positive {
-  color: #ff6b6b;
-}
-
-#geneContainer .geneButton {
+.geneButton {
   display: inline-block;
   padding: 13px 14px;
   background: #f3981d;
   border-radius: 5px;
   font-size: 14px;
   line-height: 1;
-  color: #ffffff;
+  color: #ffffff !important;
 }
-#geneContainer .geneButton:hover {
-  color: #ffffff;
+.geneButton:hover {
   background: #ffac3d;
+}
+
+.geneButton-warning,
+.geneButton-primary {
+  margin: 0 16px;
+  padding: 16px 22px 14px 22px;
+  font-size: 15px;
+  line-height: 25px;
+}
+.geneButton-warning > .geneIcon,
+.geneButton-primary > .geneIcon {
+  margin-right: 15px;
+}
+
+.geneButton-warning {
+  background: #f3981c;
+}
+.geneButton-warning:hover {
+  background: #f6ae4c;
+}
+
+.geneButton-primary {
+  background: #39bc80;
+}
+.geneButton-primary:hover {
+  background: #5bcd99;
 }
 
 .geneFold {
@@ -215,7 +267,7 @@ a:hover #geneContainer .text-number {
   transform: rotateZ(180deg);
 }
 
-.geneSection, .geneDeclaration, .geneItem, .geneTabs {
+.geneSection, .geneDeclaration, .geneItem, .geneTabs, .geneHelp, .geneTable, .geneMessage {
   margin: 20px;
   padding: 0 20px;
   border: 1px solid #e6e6e6;
@@ -328,14 +380,14 @@ a.text-title:hover span {
 .geneItem {
   font-size: 14px;
 }
-.geneItem > .text-title {
+.geneItem .text-title {
   padding: 30px 0 17px 0;
   font-size: 21px;
   line-height: 30px;
   text-align: center;
   font-weight: bold;
 }
-.geneItem > h2.text-title {
+.geneItem h2.text-title {
   padding-bottom: 32px;
   border-bottom: 1px solid #e6e6e6;
 }
@@ -372,7 +424,8 @@ a.text-title:hover span {
   flex: 1;
   font-size: 15px;
 }
-.geneItemTable > li > h4, .geneItemTable > li > p {
+.geneItemTable > li > h4,
+.geneItemTable > li > p {
   height: 55px;
   display: flex;
   align-items: center;
@@ -538,4 +591,74 @@ a.text-title:hover span {
 }
 .geneTabs > .tab-content > .active {
   display: block;
+}
+
+.geneHelp {
+  padding: 46px 40px 46px 68px;
+  font-size: 15px;
+  line-height: 30px;
+  color: #39bc80;
+}
+.geneHelp > .geneAccordion {
+  list-style: decimal;
+  padding-left: 20px;
+}
+.geneHelp > .geneAccordion > li {
+  list-style: decimal;
+  padding: 9px 0;
+}
+.geneHelp > .geneAccordion > li > h2 {
+  cursor: pointer;
+}
+.geneHelp > .geneAccordion > li > p {
+  max-height: 0;
+  color: #666666;
+  transition: max-height 300ms;
+  overflow: hidden;
+}
+.geneHelp > .geneAccordion > li.active > h2 {
+  font-weight: bold;
+}
+.geneHelp > .geneAccordion > li.active > p {
+  max-height: 3000px;
+}
+
+.geneTable {
+  padding: 0;
+  width: 1158px;
+}
+.geneTable td {
+  text-align: center;
+  font-size: 15px;
+  line-height: 55px;
+}
+.geneTable td:first-child {
+  padding-left: 30px;
+}
+.geneTable td:last-child {
+  padding-right: 30px;
+}
+.geneTable thead td {
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: bold;
+}
+
+.geneMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+}
+.geneMessage h2 {
+  margin: 35px 0;
+  font-size: 21px;
+  color: #2a3b42;
+}
+.geneMessage p {
+  margin: 15px 0;
+  font-size: 14px;
+}
+.geneMessage div {
+  display: flex;
+  align-content: center;
 }

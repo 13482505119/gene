@@ -259,148 +259,74 @@
     </div>
 </div>
 
-<!-- 基因检测 begin -->
-<div id="geneContainer" class="gcBg-1-1">
+<!-- 基金检测 begin -->
+<div id="geneContainer" class="gcBg-help">
     <div id="geneBody">
         <div class="detailnav">
 			<span>
                 <a target="_blank" href="https://www.j1.com/">健一网首页</a> &gt;
                 <a target="_blank" href="#">我的健一网</a> &gt;
                 <a target="_blank" href="#">检测人列表页</a> &gt;
-                <a target="_blank" href="#">我的基因检测报告</a> &gt;
-                <strong>基因特质</strong>
+                <strong>帮助中心</strong>
 			</span>
             <input type="hidden" value="DF" id="storeDpt"/>
         </div>
 
         <div id="geneHeading">
-            <h1>力量表现</h1>
+            <h1>帮助中心</h1>
         </div>
 
-        <div class="geneItem">
-            <h2 class="text-title">在力量运动中的表现于平均预期一致</h2>
-            <ul class="geneItemTable">
+        <div class="geneHelp">
+            <ol class="geneAccordion">
                 <li>
-                    <h4>基因</h4>
-                    <p>IRF4</p>
+                    <h2>采集管有破损或丢失怎么办？</h2>
+                    <p>在严格按照操作说明书采集完唾液样本后，请务必确认已扫描唾液采集器上的条形码，成功完成绑定。之后将唾液管放入回寄袋中，再放入原包装盒，直接使用所附快递单回寄样本，快递费用选择到付。<br>
+                        回寄地址：上海市郭守敬路199号321室<br>
+                        收件单位：和卓生物样本中心<br>
+                        收件电话：021-32550327</p>
                 </li>
                 <li>
-                    <h4>关注位点</h4>
-                    <p>rs12203592</p>
+                    <h2>由于采集样本不合格，DNA提取失败怎么办</h2>
+                    <p>在严格按照操作说明书采集完唾液样本后，请务必确认已扫描唾液采集器上的条形码，成功完成绑定。之后将唾液管放入回寄袋中，再放入原包装盒，直接使用所附快递单回寄样本，快递费用选择到付。<br>
+                        回寄地址：上海市郭守敬路199号321室<br>
+                        收件单位：和卓生物样本中心<br>
+                        收件电话：021-32550327</p>
                 </li>
                 <li>
-                    <h4>参考基因型</h4>
-                    <p><i class="geneBadge">C/C</i></p>
+                    <h2>提取唾液DNA失败的原因是什么？</h2>
+                    <p>在严格按照操作说明书采集完唾液样本后，请务必确认已扫描唾液采集器上的条形码，成功完成绑定。之后将唾液管放入回寄袋中，再放入原包装盒，直接使用所附快递单回寄样本，快递费用选择到付。<br>
+                        回寄地址：上海市郭守敬路199号321室<br>
+                        收件单位：和卓生物样本中心<br>
+                        收件电话：021-32550327</p>
                 </li>
                 <li>
-                    <h4>参考基因型</h4>
-                    <p><i class="geneBadge">C/C</i></p>
+                    <h2>如何寄回样本？</h2>
+                    <p>在严格按照操作说明书采集完唾液样本后，请务必确认已扫描唾液采集器上的条形码，成功完成绑定。之后将唾液管放入回寄袋中，再放入原包装盒，直接使用所附快递单回寄样本，快递费用选择到付。<br>
+                        回寄地址：上海市郭守敬路199号321室<br>
+                        收件单位：和卓生物样本中心<br>
+                        收件电话：021-32550327</p>
                 </li>
-            </ul>
-            <p>您在运动中的表现一般</p>
-        </div>
-
-        <div class="geneItem">
-            <h3 class="text-title">人群分布</h3>
-            <div class="geneItemChart">
-                <div class="geneItemContent">
-                    <ul>
-                        <li><i></i><strong>在力量运动中的表现与平均预期一致：71.14%<i class="geneIcon geneIcon-checked"></i></strong></li>
-                        <li><i></i>在力量运动中的表现高于平均预期：28.86%</li>
-                    </ul>
-                    <div id="geneChart"></div>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript" src="js/echarts.min.js"></script>
-        <script type="text/javascript">
-            (function () {
-                //数据
-                var title = '人群分布';
-                var color = ['#5ec5c9', '#ffd276', '#fbab6c'];
-                var data = [
-                    {value: 71.14, name:'在力量运动中的表现与平均预期一致'},
-                    {value: 28.86, name:'在力量运动中的表现高于平均预期'}
-                ];
-
-                var chartGene = echarts.init(document.getElementById('geneChart'));
-                var optionGene = {
-                    title: {
-                        show: false
-                    },
-                    tooltip: {
-                        show: false
-                    },
-                    legend: {
-                        show: false
-                    },
-                    toolbox: {
-                        show : true,
-                        feature : {
-                            mark : {show: true},
-                            dataView : {show: true, readOnly: false},
-                            magicType : {
-                                show: true,
-                                type: ['pie', 'funnel'],
-                                option: {
-                                    funnel: {
-                                        x: '25%',
-                                        width: '50%',
-                                        funnelAlign: 'center',
-                                        max: 1548
-                                    }
-                                }
-                            },
-                            restore : {show: true},
-                            saveAsImage : {show: true}
-                        }
-                    },
-                    color: color,
-                    calculable: true,
-                    series: [
-                        {
-                            name: title,
-                            type: 'pie',
-                            radius : ['55%', '90%'],
-                            center: ['50%', '50%'],
-                            itemStyle: {
-                                normal: {
-                                    label: {
-                                        show: false
-                                    },
-                                    labelLine: {
-                                        show: false
-                                    }
-                                }
-                            },
-                            data: data
-                        }
-                    ]
-                };
-
-                chartGene.setOption(optionGene);
-            })();
-        </script>
-
-        <div class="geneItem">
-            <h3 class="text-title">生活建议</h3>
-            <div class="geneItemText">
-                <div class="geneItemContent">
-                    与运动一样，饮食在管理体重、控制体型上起着重要作用。每个人对某种特定食物的喜好和反应是不同的，这与人体的某些基因相关。这些基因有的能够影响人对某种食物成分（如碳水化合物）的摄入倾向，如有的能够调节人体对食物成分（如饱和脂肪）的的代谢情况。因此，了解自己对食物的特殊喜好和代谢情况，能够帮助自己更合理地调整饮食搭配以达到自己或健身或减肥或保持健康的目标。
-                </div>
-            </div>
-        </div>
-
-        <div class="geneDeclaration">
-            <h2><i class="geneIcon geneIcon-declaration"></i>检测申明</h2>
-            <ul>
-                <li>检测结果仅供参考，不能作为临床诊断结果直接使用。</li>
-                <li>该检测无法覆盖所有与该项目相关的位点。</li>
-                <li>基因对健康有重要影响，但个体生理特征同时也受到内外诸多因素影响。</li>
-                <li>请检测者以预防的心态正确对待检测结果。</li>
-                <li>我们承诺严格保护您的个人信息和隐私安全。</li>
-            </ul>
-            <p><a class="text-primary" href="#" target="_blank">了解更多</a></p>
+                <li>
+                    <h2>为什么要4到6周才能给到检测结果？</h2>
+                    <p></p>
+                </li>
+                <li>
+                    <h2>何查询检测进度？</h2>
+                    <p></p>
+                </li>
+                <li>
+                    <h2>检测报告是否适合临床使用？</h2>
+                    <p></p>
+                </li>
+                <li>
+                    <h2>我的某某病风险高于97%的人，怎么办啊！？</h2>
+                    <p></p>
+                </li>
+                <li>
+                    <h2>对于用户的隐私安全有什么保护措施？</h2>
+                    <p></p>
+                </li>
+            </ol>
         </div>
     </div>
 </div>

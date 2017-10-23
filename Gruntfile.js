@@ -39,7 +39,8 @@ module.exports = function(grunt) {
         },
         jshint: {
             dist: [
-                '<%= config.web %>/js/*.js'
+                '<%= config.web %>/js/*.js',
+                '!<%= config.web %>/js/echarts.min.js',
             ]
         },
         useminPrepare: {
@@ -55,8 +56,8 @@ module.exports = function(grunt) {
             dist: {
                 files: [
                     {
-                        '<%= config.dist %>/js/gene.js': [
-                            '<%= config.web %>/js/*.js'
+                        '<%= config.dist %>/js/gene.min.js': [
+                            '<%= config.dist %>/js/gene.js'
                         ]
                     }
                 ]
@@ -97,7 +98,7 @@ module.exports = function(grunt) {
         cssmin: {
             dist: {
                 files: {
-                    '<%= config.dist %>/css/gene-min.css': [
+                    '<%= config.dist %>/css/gene.min.css': [
                         '<%= config.dist %>/css/gene.css'
                     ]
                 }
@@ -183,7 +184,7 @@ module.exports = function(grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'sass:dist',
-        'jshint',
+        //'jshint',
         'copy:dist',
         'autoprefixer:dist',
         'cssmin',
