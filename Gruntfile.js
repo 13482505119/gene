@@ -225,6 +225,7 @@ module.exports = function(grunt) {
         'sass:dist',
         //'jshint',
         'copy:dist',
+        'includereplace:dist',
         'autoprefixer:dist',
         'cssmin',
         'uglify'
