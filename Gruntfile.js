@@ -2,13 +2,20 @@
  * Created by Administrator on 2017/10/16.
  */
 
+var path = require('path');
+var includeRegExp = new RegExp('@@include\\(\\s*["\'](.*?)["\'](,\\s*({[\\s\\S]*?})){0,1}\\s*\\)');
+
 module.exports = function(grunt) {
+    var serveStatic = require('serve-static');
+
+    var config = {
+        web: 'web',
+        dist: 'dist'
+    };
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        config: {
-            web: 'web',
-            dist: 'dist'
-        },
+        config: config,
         clean: {
             dist: {
                 files: [{
@@ -153,7 +160,39 @@ module.exports = function(grunt) {
             },
             livereload: {
                 options: {
-                    base: '<%= config.web %>'
+                    base: '<%= config.web %>',
+                    middleware: function(connect){
+                        return [
+                            connect().use('/bower_components', serveStatic('./bower_components')),
+                            function(req, res, next) {
+                                //include
+                                var filePath = req.url,
+                                    fileDir = path.dirname(filePath),
+                                    body;
+
+                                if (-1 == filePath.indexOf('.html')) {
+                                    body = grunt.file.read(config.web + filePath);
+                                } else {
+                                    console.log('request - %s', config.web + filePath);
+                                    body = grunt.file.read(config.web + filePath);
+                                    var matches = includeRegExp.exec(body);
+
+                                    while (matches) {
+                                        var match = matches[0];
+                                        var includePath = matches[1];
+                                        //var localVars = matches[3] ? JSON.parse(matches[3]) : {};
+
+                                        console.log('include - %s', config.web + fileDir + includePath);
+                                        body = body.replace(match, grunt.file.read(config.web + fileDir + includePath));
+
+                                        matches = includeRegExp.exec(body);
+                                    }
+                                }
+
+                                return res.end(body);
+                            }
+                        ];
+                    }
                 }
             }
         }
