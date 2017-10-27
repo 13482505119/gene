@@ -250,15 +250,15 @@ $positive: #ff6b6b;
   }
 }
 .geneButton-warning {
-  background: #f3981c;
+  background: #ff8400;
   &:hover {
-    background: lighten(#f3981c, 10%);
+    background: lighten(#ff8400, 10%);
   }
 }
 .geneButton-primary {
-  background: #39bc80;
+  background: #c40002;
   &:hover {
-    background: lighten(#39bc80, 10%);
+    background: lighten(#c40002, 10%);
   }
 }
 

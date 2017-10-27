@@ -235,17 +235,17 @@ a:hover .geneIcon-arrow {
 }
 
 .geneButton-warning {
-  background: #f3981c;
+  background: #ff8400;
 }
 .geneButton-warning:hover {
-  background: #f6ae4c;
+  background: #ff9d33;
 }
 
 .geneButton-primary {
-  background: #39bc80;
+  background: #c40002;
 }
 .geneButton-primary:hover {
-  background: #5bcd99;
+  background: #f70003;
 }
 
 .geneFold {

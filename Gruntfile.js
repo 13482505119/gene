@@ -120,7 +120,8 @@ module.exports = function(grunt) {
                         cwd: '<%= config.web %>',
                         dest: '<%= config.dist %>',
                         src: [
-                            '**/*.{html,js,css}'
+                            '**/*.{html,js,css}',
+                            '**/*.{png,jpg,gif}'
                         ]
                     }
                 ]
