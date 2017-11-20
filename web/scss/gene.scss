@@ -120,6 +120,12 @@ $positive: #ff6b6b;
 #geneContainer .text-positive {
   color: $positive;
 }
+#geneContainer .text-ellipsis {
+  width: 9em;
+  text-align: right;
+  font-size: 18px;
+  @include ellipsis(auto, 1);
+}
 
 .geneIcon {
   display: inline-block;
@@ -348,16 +354,6 @@ $positive: #ff6b6b;
     overflow: hidden;
     @include rotate-transition;
     > li {
-      > .text-primary {
-        width: 9em;
-        text-align: center;
-        font-size: 18px;
-        overflow : hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-      }
       & + li {
         border-top: none;
       }
@@ -516,7 +512,7 @@ $positive: #ff6b6b;
     margin: 30px 0;
     width: 560px;
     height: 32px;
-    background: -webkit-linear-gradient(left, #6fc8fa, #ffe35f 50%, #faaa6a);
+    background: -webkit-linear-gradient(left, #6fc8fa, #97e183 56%, #ffe35f 81%, #faaa6a);
     @include border-radius(16px);
     > ul {
       position: absolute;

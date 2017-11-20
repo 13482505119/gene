@@ -84,6 +84,18 @@ a:hover #geneContainer .text-number {
   color: #ff6b6b;
 }
 
+#geneContainer .text-ellipsis {
+  width: 9em;
+  text-align: right;
+  font-size: 18px;
+  height: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
 .geneIcon {
   display: inline-block;
   background: url("https://img.j1.com/images/images1308/ico/geneIcon.png") no-repeat 100px 100px;
@@ -329,16 +341,6 @@ a.text-title:hover span {
   overflow: hidden;
   transition: all 300ms;
 }
-.geneSection-sub > ul > li > .text-primary {
-  width: 9em;
-  text-align: center;
-  font-size: 18px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
 .geneSection-sub > ul > li + li {
   border-top: none;
 }
@@ -491,7 +493,7 @@ a.text-title:hover span {
   margin: 30px 0;
   width: 560px;
   height: 32px;
-  background: -webkit-linear-gradient(left, #6fc8fa, #ffe35f 50%, #faaa6a);
+  background: -webkit-linear-gradient(left, #6fc8fa, #97e183 56%, #ffe35f 81%, #faaa6a);
   border-radius: 16px;
 }
 .geneItemRuler > .ruler > ul {
