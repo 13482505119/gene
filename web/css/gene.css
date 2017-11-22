@@ -86,7 +86,6 @@ a:hover #geneContainer .text-number {
 
 #geneContainer .text-ellipsis {
   width: 9em;
-  text-align: right;
   font-size: 18px;
   height: auto;
   overflow: hidden;
@@ -566,6 +565,14 @@ a.text-title:hover span {
 .geneTabs > .tab-list > li.active {
   background: #39bc80;
   color: #ffffff;
+}
+.geneTabs > .tab-list-8 > li {
+  padding: 1px;
+  width: 8em;
+}
+.geneTabs > .tab-list-8 > li:hover {
+  padding: 0;
+  border: 1px solid #39bc80;
 }
 .geneTabs > .tab-content > .tab-pane {
   position: relative;

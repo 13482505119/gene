@@ -122,7 +122,6 @@ $positive: #ff6b6b;
 }
 #geneContainer .text-ellipsis {
   width: 9em;
-  text-align: right;
   font-size: 18px;
   @include ellipsis(auto, 1);
 }
@@ -586,6 +585,16 @@ $positive: #ff6b6b;
     > li.active {
       background: $geneBadge;
       color: #ffffff;
+    }
+  }
+  > .tab-list-8 {
+    > li {
+      padding: 1px;
+      width: 8em;
+      &:hover {
+        padding: 0;
+        border: 1px solid $geneBadge;
+      }
     }
   }
   > .tab-content {
