@@ -310,12 +310,12 @@ a.text-title:hover span {
   list-style: none;
   margin: 0;
   padding: 0 0 10px 0;
-  line-height: 55px;
 }
 .geneSection > ul li {
   display: flex;
   align-items: center;
   padding: 0 40px 0 58px;
+  height: 55px;
 }
 .geneSection > ul li h4 {
   flex: 1;
@@ -344,7 +344,7 @@ a.text-title:hover span {
   border-top: none;
 }
 .geneSection-sub.open > ul {
-  max-height: 1375px;
+  max-height: 13200px;
 }
 
 .geneDeclaration {
@@ -534,7 +534,7 @@ a.text-title:hover span {
   border-bottom: 11px solid #c6dd9b;
 }
 .geneItemRuler > ul {
-  width: 340px;
+  width: 400px;
   font-size: 18px;
   line-height: 36px;
   color: #2a3b42;
